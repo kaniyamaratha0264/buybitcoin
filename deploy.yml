@@ -1,0 +1,45 @@
+---
+- name: Buybitcoin
+  hosts: your_aws_server
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Install Node.js and npm
+      become: true
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - nodejs
+        - npm
+
+    - name: Copy Backend files
+      copy:
+        src: backend/
+        dest: /path/on/aws/server/
+
+    - name: Copy Frontend files
+      copy:
+        src: frontend/
+        dest: /path/on/aws/server/
+
+    - name: Install Backend dependencies
+      command: npm install
+      args:
+        chdir: /path/on/aws/server/backend
+
+    - name: Install Frontend dependencies
+      command: npm install
+      args:
+        chdir: /path/on/aws/server/frontend
+
+    - name: Build Frontend
+      command: npm run build
+      args:
+        chdir: /path/on/aws/server/frontend
+
+    - name: Start Backend
+      command: npm start
+      args:
+        chdir: /path/on/aws/server/backend
