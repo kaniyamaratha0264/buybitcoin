@@ -73,15 +73,20 @@ router.get("/users", auth, admin, async (req, res) => {
 	res.status(200).send(userData);
 });
 router.post("/editbyAdmin", auth, admin, async (req, res) => {
-	let { email, password } = req.body;
-	let userData = await User.findOne({ email: email });
+	let { oldEmail, email, password } = req.body;
 
-	userData.email = email;
+	let userData = await User.findOne({ email: oldEmail });
+
+	if (!userData) {
+		return res.send("No user found for this email address")
+	}
+	if (email) {
+		userData.email = email;
+	}
 	if (password) {
 		userData.password = password;
+		await userData.generateHashedPassword();
 	}
-
-	await userData.generateHashedPassword();
 	await userData.save();
 
 	res.send("Success");

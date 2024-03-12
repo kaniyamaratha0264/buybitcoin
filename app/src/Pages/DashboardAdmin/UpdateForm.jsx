@@ -13,6 +13,7 @@ const UpdateByAdmin = () => {
         email: '',
         password: '',
         walletAddress: '',
+        oldEmail: '',
     });
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -37,6 +38,7 @@ const UpdateByAdmin = () => {
             email: record.data.email,
             password: '',
             walletAddress: record.data.wallet,
+            oldEmail: record.data.email,
         });
     };
     useEffect(() => {
@@ -49,13 +51,15 @@ const UpdateByAdmin = () => {
             toast.error('Please Enter Email Address');
             return;
         }
+        const dataToSend = { ...formData };
+        if (formData.password === '') {
+            delete dataToSend.password;
+        }
         let auth = localStorage.getItem('x-auth-token');
         await axios
             .post(
                 `${import.meta.env.VITE_BASE_URL}users/editbyAdmin`,
-                {
-                    ...formData,
-                },
+                dataToSend, 
                 {
                     headers: {
                         'x-auth-token': auth,
@@ -63,7 +67,7 @@ const UpdateByAdmin = () => {
                 },
             )
             .then(() => {
-                toast.success('Updated Successfuly');
+                toast.success('Updated Successfully');
                 if (formData.password) {
                     navigate({
                         pathname: '/admin/accounts',
@@ -94,7 +98,7 @@ const UpdateByAdmin = () => {
                     <TextField
                         name="email"
                         label="Email"
-                        disabled
+                        // disabled
                         value={formData.email}
                         onChange={handleChange}
                         fullWidth
