@@ -47,7 +47,7 @@ const data1 = [
         heading: 'AML and KYC procedure',
         list: [
             'BuyBitcoin reserves the right to apply the AML/KYC procedure to specific Users, addresses and particular transactions of crypto assets.',
-            'The up-to-date information on the AML/KYC procedures can always be found at the [buybitcoin.ai](https://buybitcoin.ai) website.',
+            'The up-to-date information on the AML/KYC procedures can always be found at the [bitcoinbank.cc](https://bitcoinbank.cc) website.',
             'In case the User refuses to undergo the KYC/AML procedure, refund policy is carried out in accordance with Paragraph 3.6 of the Terms.',
         ],
     },
@@ -136,7 +136,7 @@ const TermsUse = () => {
                         >
                             These Terms of Use and any terms incorporated herein (hereinafter, the
                             “Terms”) apply to your (“user”, “you“) use of the Services, including
-                            https://buybitcoin.ai (“Website“), the technology and the platform
+                            https://bitcoinbank.cc (“Website“), the technology and the platform
                             integrated therein and any related applications (including without
                             limitation the mobile one) associated therewith (“BuyBitcoin”, “We”,
                             “Service” or “Us”), which are operated and maintained by Btcfintechs

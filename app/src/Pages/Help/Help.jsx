@@ -37,7 +37,7 @@ const data = [
     },
     {
         heading: 'Where is BuyBitcoin based?',
-        text: 'Founded in 2019, buybitcoin.ai is a Cayman Islands registered cryptocurrency exchange that adopts blockchain technology to build the next-generation financial ecosystem. We provide the latest trading services for hundreds of diverse crypto assets.',
+        text: 'Founded in 2019, bitcoinbank.cc is a Cayman Islands registered cryptocurrency exchange that adopts blockchain technology to build the next-generation financial ecosystem. We provide the latest trading services for hundreds of diverse crypto assets.',
     },
     {
         heading: 'How do I exchange and mix bitcoin?',
@@ -242,7 +242,7 @@ const Help = () => {
                                             color: 'rgba(8, 12, 72, 1)',
                                         }}
                                     >
-                                        support@buybitcoin.ai
+                                        support@bitcoinbank.cc
                                     </Typography>
                                     <Box mt={4}>
                                         <InputBase

@@ -528,23 +528,6 @@ const Footer = () => {
                         </Box>
                     </Grid>
                 </Grid>
-
-                {location?.pathname !== '/' ? (
-                    <Typography
-                        sx={{
-                            fontSize: '15px',
-
-                            fontWeight: '400',
-                            textAlign: { md: 'right', xs: 'center' },
-                            mt: 5,
-                            mr: 2,
-                        }}
-                    >
-                        All right reserved @ BuyBitcoin.ai
-                    </Typography>
-                ) : (
-                    ''
-                )}
             </Container>
         </Box>
     );

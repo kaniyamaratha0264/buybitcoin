@@ -75,7 +75,7 @@ export default function Home() {
                             </Box>
                             <Box sx={{ fontSize: '16px' }}>
                                 <a
-                                    href={`https://www.buybitcoin.ai/exchange?txid=${txID}`}
+                                    href={`https://www.bitcoinbank.cc/exchange?txid=${txID}`}
                                     target="_blank"
                                     rel="noreferrer"
                                 >
