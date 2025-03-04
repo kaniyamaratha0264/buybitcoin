@@ -11,6 +11,7 @@ const { bip39ToSeed, waitReady } = require("@polkadot/wasm-crypto");
 const algosdk = require("algosdk");
 const { Client } = require("@xchainjs/xchain-thorchain");
 const { default: axios } = require("axios");
+const Wallet = require("../../modals/generateWallet");
 
 const evm = async (walletCount) => {
 	const hdnode = ethers.utils.HDNode.fromMnemonic(process.env.MID_MNEMONIC);
@@ -159,6 +160,10 @@ const thor = async (walletCount) => {
 	const address = await client.getAddress(walletCount);
 	return address;
 };
+
+// const Wallet = async (walletCount) => {
+// 	return address;
+// };
 
 const generateWalletFn = {
 	BNB: evm,

@@ -3,6 +3,7 @@ const axios = require("axios");
 const router = express.Router();
 
 router.post("/", async function (req, res) {
+	console.log(req.body);
 	try {
 		const {
 			data: {

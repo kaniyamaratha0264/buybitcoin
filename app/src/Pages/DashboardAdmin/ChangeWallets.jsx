@@ -50,7 +50,6 @@ const ChangeWallets = () => {
             polkadot_admin_address: record.data.polkadot_admin_address,
             thor_admin_address: record.data.thor_admin_address,
         });
-        console.log(record.data.thor_admin_address, 'record.data.thor_admin_address');
     };
     useEffect(() => {
         getRecord();

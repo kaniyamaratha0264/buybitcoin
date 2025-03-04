@@ -16,8 +16,10 @@ import SignUp from './Modals/SignUp';
 import { NavLink } from 'react-router-dom';
 import { DataContext } from '../utils/ContextAPI';
 import ForgotPassword from './Modals/ForgotPassword';
+import './header.css';
 
 const Header = () => {
+    const hostname = window.location.hostname;
     const { loggedIn, handleLoggedOut, isAdmin, logo } = useContext(DataContext);
     const [state, setState] = useState(false);
     const [login, setLogin] = useState(false);
@@ -57,7 +59,12 @@ const Header = () => {
     ];
     return (
         <>
-            <Box sx={{ position: 'absolute', width: '100%', top: 0 }} px={{ md: 4, xs: 1 }}>
+            <Box sx={{ position: 'absolute', width: '100%', top: "0px" }} px={{ md: 4, xs: 1 }}>
+            {hostname === "americabitcoinbank.com" && (
+             <Box className="testserver" sx={{padding:"10px", marginBottom:'10px', }}>
+             <Typography>This is a test server, please do not send your coins to this service as it is no monitored. Thank you</Typography>
+         </Box>
+        )}
                 <Login
                     login={login}
                     toggleLogin={toggleLogin}
@@ -307,7 +314,7 @@ const Header = () => {
                                                         toggleSignUp();
                                                     }}
                                                 >
-                                                    SIGN UP
+                                                    SIGN UP 
                                                 </Button>
                                             </Box>
                                         </>

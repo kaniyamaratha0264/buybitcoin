@@ -28,7 +28,7 @@ router.post("/createtx", trx, async (req, res) => {
 		receiveCurrecnyId,
 		exchangeType,
 	} = req.body;
-
+	console.log("sendCurrecnyId", sendCurrecnyId,sendCurrency);
 	let conversion = await coinMarketCapConvert(2781, sendCurrecnyId, 1);
 	conversion = conversion?.price * amount;
 
@@ -37,13 +37,14 @@ router.post("/createtx", trx, async (req, res) => {
 	}
 
 	const verify = await walletVerifyFn[receiveCurrency](recipient);
-
+	
 	if (!verify) {
 		return res.status(400).send("Invalid Receipient Address");
 	}
 
 	const i = 1;
 	const walletCount = await Wallet.findOne({ title: sendCurrency });
+	console.log("🚀 ~ router.post ~ walletCount:", walletCount)
 
 	if (!walletCount) {
 		const walletCount = new Wallet({
@@ -77,6 +78,7 @@ router.post("/createtx", trx, async (req, res) => {
 		console.log('=====>sendCurrency in else', sendCurrency);
 		wallet = await generateWalletFn[sendCurrency](address);
 	}
+	console.log('=====>wallet', wallet);
 
 	if (wallet) {
 		if (walletCount) {
