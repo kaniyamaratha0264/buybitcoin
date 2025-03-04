@@ -1,0 +1,23 @@
+.testserver p{
+  max-width: 771.91px;
+  width:100%;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 4px solid #212121;
+	animation: cursor 0.5s step-start infinite, 
+    text 8s steps(100) alternate infinite;
+}
+@keyframes cursor {
+	0%, 100% { 
+    border-color: #ffffff; 
+  }
+}
+
+@keyframes text {
+	0% { 
+    width: 0; 
+  }
+	100% { 
+    width: 100%; 
+  }
+}

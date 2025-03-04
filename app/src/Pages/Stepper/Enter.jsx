@@ -355,7 +355,6 @@ export default function Enter() {
                         <Box
                             sx={{
                                 py: 1,
-
                                 fontStyle: 'normal',
                                 fontWeight: '400',
                                 fontSize: '8px',

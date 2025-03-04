@@ -3,6 +3,7 @@ var router = express.Router();
 let { adminWallets, decryption } = require("../modals/adminWallets");
 const auth = require("../middlewares/auth");
 const admin = require("../middlewares/admin");
+const { logger } = require("ethers");
 
 router.post("/change", auth, admin, async function (req, res) {
 	try {
@@ -115,6 +116,7 @@ router.get("/getWallet", async function (req, res) {
 		let adminWallet = await adminWallets.findOne({
 			title: "wallets",
 		});
+		console.log('adminWallet',adminWallet)
 
 		if (adminWallet) {
 			let wallets = {

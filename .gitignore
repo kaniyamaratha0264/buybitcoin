@@ -23,5 +23,9 @@ yarn.lock
 *.sln
 *.sw?
 
+.env
 app/node_modules
+app/.env
+app/.env.development
+app/.env.production
 package-lock.json

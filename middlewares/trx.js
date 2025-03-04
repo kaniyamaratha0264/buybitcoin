@@ -4,7 +4,6 @@ const { User } = require("../modals/user");
 
 async function trx(req, res, next) {
 	let token = req.header("x-auth-token");
-	console.log(token);
 	if (token)
 		try {
 			const decoded = jwt.verify(token, process.env.jwtPrivateKey);

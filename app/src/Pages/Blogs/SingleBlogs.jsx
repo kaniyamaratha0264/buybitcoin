@@ -12,7 +12,6 @@ const SingleBlogs = () => {
                 `${import.meta.env.VITE_BASE_URL}blogs/getSingle/${params.blogId}`,
             );
             // eslint-disable-next-line
-            console.log(response.data.response, 'ghjk');
             if (response) {
                 setBlogs(response.data.response);
             }
